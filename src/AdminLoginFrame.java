@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AdminLoginFrame extends JFrame implements ActionListener {
+    Admin_info admin_info =new Admin_info();
 
     private Container container;
     private JLabel userLabel;
@@ -14,6 +15,8 @@ public class AdminLoginFrame extends JFrame implements ActionListener {
     private JButton resetButton;
 
     public AdminLoginFrame() {
+        admin_info.setUsername("admin");
+        admin_info.setPassword("admin");
         container = getContentPane();
         container.setLayout(null);
 
@@ -56,7 +59,7 @@ public class AdminLoginFrame extends JFrame implements ActionListener {
             String passwordText;
             userText = userTextField.getText();
             passwordText = passwordField.getText();
-            if (userText.equalsIgnoreCase("admin") && passwordText.equalsIgnoreCase("admin")) {
+            if (userText.equalsIgnoreCase(admin_info.getUsername()) && passwordText.equalsIgnoreCase(admin_info.getPassword())) {
                 JOptionPane.showMessageDialog(this, "Login Successful");
                 setVisible(false);
                 new AdminMenu();
