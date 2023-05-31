@@ -20,7 +20,11 @@ public class Vote extends JFrame implements ActionListener {
 
     public void vote(){
         container.setLayout(null);
-
+        if(candidateInfo.serial.isEmpty()){
+            JOptionPane.showMessageDialog(this,"No Candidate");
+            new VotingMenu();
+            return;
+        }
         serialLabel.setText("Candidate Serial");
         serialLabel.setBounds(70, 20, 100, 50);
         container.add(serialLabel);

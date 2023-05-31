@@ -51,22 +51,17 @@ import java.awt.event.ActionListener;
             saveButton.addActionListener(this);
             container.add(saveButton);
 
-            resetButton.setText("Reset");
+            resetButton.setText("Back");
             resetButton.setBounds(240, 120, 150, 30);
             resetButton.setFocusable(false);
             resetButton.addActionListener(this);
             container.add(resetButton);
 
-            backButton.setText("Back");
-            backButton.setBounds(145, 180, 150, 30);
-            backButton.setFocusable(false);
-            backButton.addActionListener(this);
-            container.add(backButton);
 
 
             frame.add(container);
             frame.setTitle("Set Winner");
-            frame.setSize(500, 400);
+            frame.setSize(500, 300);
             frame.setLocationRelativeTo(null);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setVisible(true);
@@ -89,12 +84,9 @@ import java.awt.event.ActionListener;
                 frame.setVisible(false);
                 new AdminMenu();
             } else if (e.getSource()==resetButton) {
-                serialTextField.setText("");
-                nameTextField.setText("");
-            } else if (e.getSource()==backButton) {
                 frame.setVisible(false);
                 new AdminMenu();
-            } else if (e.getSource()==viewBackButton) {
+            }  else if (e.getSource()==viewBackButton) {
                 frame.setVisible(false);
                 new Menu();
             }
